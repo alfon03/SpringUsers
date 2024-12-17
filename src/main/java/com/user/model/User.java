@@ -2,91 +2,102 @@ package com.user.model;
 
 public class User {
 
-	private String id;
+    private String id;
 
-	private String name;
+    private String name;
 
-	private String surname;
+    private String surname;
 
-	private String address;
+    private String address;
 
-	private String phone;
+    private String phone;
 
-	private String locality;
+    private String locality;
 
-	private String province;
-	
-	public User() {
-		
+    private String province;
+
+    private int edad;
+
+    public User() {
+
     }
-	
-	public User(String id, String name, String surname, String address, String phone, String locality,
-			String province) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.surname = surname;
-		this.address = address;
-		this.phone = phone;
-		this.locality = locality;
-		this.province = province;
-	}
 
-	// Getters and Setters
+    public User(String id, String name, String surname, String address, String phone, String locality,
+                String province, int edad) { 
+        super();
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.address = address;
+        this.phone = phone;
+        this.locality = locality;
+        this.province = province;
+        this.edad = edad; 
+    }
 
-	public String getId() {
-		return id;
-	}
+    // Getters y Setters
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getSurname() {
-		return surname;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
+    public String getSurname() {
+        return surname;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public String getPhone() {
+        return phone;
+    }
 
-	public String getLocality() {
-		return locality;
-	}
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-	public void setLocality(String locality) {
-		this.locality = locality;
-	}
+    public String getLocality() {
+        return locality;
+    }
 
-	public String getProvince() {
-		return province;
-	}
+    public void setLocality(String locality) {
+        this.locality = locality;
+    }
 
-	public void setProvince(String province) {
-		this.province = province;
-	}
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public int getEdad() { 
+        return edad;
+    }
+
+    public void setEdad(int edad) { 
+        this.edad = edad;
+    }
 }
