@@ -1,21 +1,47 @@
 package com.user.model;
 
-public class User {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
+@Entity
+@Table(name="users")
+public class User {
+	@NotNull
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
+    @NotNull
+    @Column(name="name")
     private String name;
-
+    
+    @NotNull
+    @Column(name="surname")
     private String surname;
 
+    @NotNull
+    @Column(name="address")
     private String address;
 
+    @NotNull
+    @Column(name="phone")
     private String phone;
 
+    @NotNull
+    @Column(name="locality")
     private String locality;
 
+    @NotNull
+    @Column(name="provincie")
     private String province;
 
+    @NotNull
+    @Column(name="edad")
     private int edad;
 
     public User() {

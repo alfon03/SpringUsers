@@ -1,5 +1,6 @@
 package com.user.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +10,8 @@ import com.user.service.UserService;
 
 @Controller
 public class UserController {
-
+	
+	@Autowired
     private final UserService userService;
 
     public UserController(UserService userService) {
@@ -23,7 +25,7 @@ public class UserController {
 
     @GetMapping("/users")
     public String listUsers(Model model) {
-        model.addAttribute("users", userService.findAll());
+        model.addAttribute("users", userService.getAll());
         return "users";
     }
 
@@ -32,7 +34,7 @@ public class UserController {
         model.addAttribute("user", new User());
         return "add-user";
     }
-
+/*
     @GetMapping("/users/delete/{id}")
     public String deleteUser(@PathVariable String id, Model model) {
         if (!userService.delete(id)) {
@@ -78,6 +80,6 @@ public class UserController {
         }
         return null;
     }
-
+*/
 
 }
