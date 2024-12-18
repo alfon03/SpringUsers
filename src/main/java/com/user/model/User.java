@@ -1,30 +1,47 @@
 package com.user.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="users")
 public class User {
 
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @Column(name="id")
+    private int id;
 
+    @Column(name="name", nullable = false)  
     private String name;
 
+    @Column(name="surname", nullable = false)  
     private String surname;
 
+    @Column(name="address", nullable = false)  
     private String address;
 
+    @Column(name="phone", nullable = false) 
     private String phone;
 
+    @Column(name="locality", nullable = false)  
     private String locality;
 
+    @Column(name="province", nullable = false)  
     private String province;
 
+    @Column(name="edad", nullable = false)  
     private int edad;
 
     public User() {
-
     }
 
-    public User(String id, String name, String surname, String address, String phone, String locality,
+    public User(int id, String name, String surname, String address, String phone, String locality,
                 String province, int edad) { 
-        super();
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -35,13 +52,13 @@ public class User {
         this.edad = edad; 
     }
 
-    // Getters y Setters
+    // Getters and Setters
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -93,11 +110,11 @@ public class User {
         this.province = province;
     }
 
-    public int getEdad() { 
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) { 
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 }
