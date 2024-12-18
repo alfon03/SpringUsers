@@ -6,51 +6,42 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name="users")
 public class User {
-	@NotNull
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
 
-    @NotNull
-    @Column(name="name")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @Column(name="id")
+    private int id;
+
+    @Column(name="name", nullable = false)  
     private String name;
-    
-    @NotNull
-    @Column(name="surname")
+
+    @Column(name="surname", nullable = false)  
     private String surname;
 
-    @NotNull
-    @Column(name="address")
+    @Column(name="address", nullable = false)  
     private String address;
 
-    @NotNull
-    @Column(name="phone")
+    @Column(name="phone", nullable = false) 
     private String phone;
 
-    @NotNull
-    @Column(name="locality")
+    @Column(name="locality", nullable = false)  
     private String locality;
 
-    @NotNull
-    @Column(name="provincie")
+    @Column(name="province", nullable = false)  
     private String province;
 
-    @NotNull
-    @Column(name="edad")
+    @Column(name="edad", nullable = false)  
     private int edad;
 
     public User() {
-
     }
 
-    public User(String id, String name, String surname, String address, String phone, String locality,
+    public User(int id, String name, String surname, String address, String phone, String locality,
                 String province, int edad) { 
-        super();
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -61,13 +52,13 @@ public class User {
         this.edad = edad; 
     }
 
-    // Getters y Setters
+    // Getters and Setters
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -119,11 +110,11 @@ public class User {
         this.province = province;
     }
 
-    public int getEdad() { 
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) { 
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 }
